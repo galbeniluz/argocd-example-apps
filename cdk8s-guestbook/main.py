@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from constructs import Construct
 from cdk8s import App, Chart
 
