@@ -26,7 +26,7 @@ class MyChart(Chart):
                 spec=k8s.PodSpec(containers=[
                     k8s.Container(
                     name='guestbook-ui',
-                    image='pgcr.io/heptio-images/ks-guestbook-demo:0.2',
+                    image='gcr.io/heptio-images/ks-guestbook-demo:0.2',
                     ports=[k8s.ContainerPort(container_port=80)])]))))
         
 app = App()
