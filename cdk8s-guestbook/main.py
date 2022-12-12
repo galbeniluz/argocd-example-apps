@@ -10,11 +10,10 @@ class MyChart(Chart):
 
         label = {"app": "guestbook-ui"}
 
-
         k8s.KubeService(self, 'service',
             spec=k8s.ServiceSpec(
                 type='LoadBalancer',
-                ports=[k8s.ServicePort(port=80, target_port=k8s.IntOrString.from_number(80))],
+                ports=[k8s.ServicePort(port=80, target_port=k8s.IntOrString.from_number(8080))],
                 selector=label))
 
         k8s.KubeDeployment(self, 'deployment',
@@ -27,9 +26,9 @@ class MyChart(Chart):
                     k8s.Container(
                     name='guestbook-ui',
                     image='gcr.io/heptio-images/ks-guestbook-demo:0.2',
-                    ports=[k8s.ContainerPort(container_port=80)])]))))
-        
+                    ports=[k8s.ContainerPort(container_port=8080)])]))))
+
 app = App()
-MyChart(app, "cdk8s-guestbook")
+MyChart(app, "hello-python")
 
 app.synth()
