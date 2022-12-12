@@ -29,6 +29,6 @@ class MyChart(Chart):
                     ports=[k8s.ContainerPort(container_port=8080)])]))))
 
 app = App()
-MyChart(app, "hello-python")
+MyChart(app, "cdk8s-guestbook")
 
 app.synth()
